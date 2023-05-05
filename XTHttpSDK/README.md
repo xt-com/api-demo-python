@@ -1,0 +1,1029 @@
+# XTHttpAPISDK v0.0.2
+
+## Note
+
+Explanation:
+
+1. Some method inputs may have changed, so please check the official documentation for the latest inputs
+
+2. Some methods may not be developed externally, so there may be abnormal problems when calling, please consult the official customer service before using
+
+3. If you encounter any problems during use, please contact the official customer service and we will provide you with help as soon as possible
+
+## install
+
+```
+# Use SDK
+python setup.py bdist_egg
+python setup.py install
+from XTHttpSDK import PublicHttpAPI, SignedHttpAPI, PrivateWebsocket, PublicWebSocket, PublicFutureHttpAPI, SignedFutureHttpAPI, SignedFutureProfitHttpAPI
+```
+
+## Future
+
+domain = "https://fapi.xt.com"
+accesskey = "xxxxxxxxxxxxxxxxxxxxx"
+sercetkey = "yyyyyyyyyyyyyyyyyyyyy"
+
+### test_get_coins_info
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+publicAPI.get_coins_info()
+```
+
+### test_get_symbol_detail
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+
+publicAPI.get_symbol_detail(params)
+```
+
+### test_get_marketconfig_list
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+publicAPI.get_marketconfig_list()
+```
+
+### test_get_leverage_bracket_detail
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_leverage_bracket_detail(params)
+```
+
+### test_get_leverage_bracket_detail
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+publicAPI.get_leverage_bracket_list()
+```
+
+### test_get_ticker
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+            "symbol": "btc_usdt",
+        }
+publicAPI.get_ticker(params)
+```
+
+### test_get_tickers
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+publicAPI.get_tickers()
+```
+
+### test_get_tickers
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+    "num": "1",
+}
+publicAPI.get_deal(params)
+```
+
+### test_get_depth
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+    "level": "1",
+}
+publicAPI.get_depth(params)
+```
+
+### test_get_symbol_index_price
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_symbol_index_price(params)
+```
+
+### test_get_all_index_price
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+publicAPI.get_all_index_price()
+```
+
+### test_get_symbol_market_price
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_symbol_market_price(params)
+```
+
+### test_get_all_market_price
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+publicAPI.get_all_market_price()
+```
+
+### test_get_kline
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_kline(params)
+```
+
+### test_get_agg_ticker
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_agg_ticker(params)
+```
+
+### test_get_agg_tickers
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+publicAPI.get_agg_tickers()
+```
+
+### test_get_funding_rate
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_funding_rate(params)
+```
+
+### test_get_funding_rate_racord
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_funding_rate_racord(params)
+```
+
+### test_get_risk_balance
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_risk_balance(params)
+```
+
+### test_get_open_interest
+
+```
+publicAPI = PublicFutureHttpAPI(domain)
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_open_interest(params)
+```
+
+### test_get_account_info
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+publicAPI.get_account_info()
+```
+
+### test_get_listenkey
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+publicAPI.get_listenkey()
+```
+
+### test_get_balance_detail
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "coin": "usdt"
+}
+signedHttpAPI.get_balance_detail(params)
+```
+
+### test_get_balance_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+signedHttpAPI.get_balance_list()
+```
+
+### test_get_balance_bills
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+signedHttpAPI.get_balance_bills()
+```
+
+### test_get_funding_rate_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+signedHttpAPI.get_funding_rate_list()
+```
+
+### test_get_get_position_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+signedHttpAPI.get_position_list()
+```
+
+### test_position_adjust_leverage
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+    "positionSide": "SHORT",
+    "leverage": "1",
+}
+signedHttpAPI.position_adjust_leverage(params)
+```
+
+### test_position_margin
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+}
+signedHttpAPI.position_margin(params)
+```
+
+### test_position_auto_margin
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+    "positionSide": "SHORT",
+    "autoMargin": True,
+}
+signedHttpAPI.position_auto_margin(params)
+```
+
+### test_get_position_adl
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+signedHttpAPI.get_position_adl()
+```
+
+### test_cancel_collection
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+}
+signedHttpAPI.cancel_collection(params)
+```
+
+### test_get_collection_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+signedHttpAPI.get_collection_list()
+```
+
+### test_position_change_type
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+    "positionSide": "SHORT",
+    "positionType": "CROSSED",
+}
+signedHttpAPI.position_change_type(params)
+```
+
+### test_order_create
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+    "orderSide": "BUY",
+    "orderType": "MARKET",
+    "origQty": "1",
+    "price": "29180",
+    "positionSide": "SHORT",
+}
+signedHttpAPI.order_create(params)
+```
+
+### test_get_order_history_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+}
+signedHttpAPI.get_order_history_list(params)
+```
+
+### test_get_trade_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+}
+signedHttpAPI.get_trade_list(params)
+```
+
+### test_batch_order
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+data = [
+    {
+        "symbol":       "btc_usdt",
+        "price":        "29000",
+        "orderSide":    "BUY",
+        "orderType":    "MARKET",
+        "origQty":      "1",
+        "positionSide": "SHORT",
+    },
+]
+
+params = {
+    "list": data,
+}
+signedHttpAPI.batch_order(params)
+```
+
+### test_get_order_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+signedHttpAPI.get_order_list()
+```
+
+### test_get_order_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "orderId": 224672020489736640,
+}
+signedFutureHttpAPI.cancel_order(params)
+```
+
+### test_cancel_order_all
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+}
+signedFutureHttpAPI.cancel_order_all(params)
+```
+
+### test_create_entrust_plan
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+}
+signedFutureHttpAPI.create_entrust_plan(params)
+```
+
+### test_create_entrust_plan
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+}
+signedFutureHttpAPI.create_entrust_plan(params)
+```
+
+### test_cancel_entrust_plan
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "entrustId": "xxxx",
+}
+signedFutureHttpAPI.cancel_entrust_plan(params)
+```
+
+### test_get_entrust_plan_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "xxxx",
+}
+signedFutureHttpAPI.get_entrust_plan_list(params)
+```
+
+### test_get_entrust_plan_detail
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "entrustId": "xxxx",
+}
+signedFutureHttpAPI.get_entrust_plan_detail(params)
+```
+
+### test_get_entrust_history_list
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "xxxx",
+}
+signedFutureHttpAPI.get_entrust_history_list(params)
+```
+
+### test_create_entrust_profit
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "btc_usdt",
+    "origQty": "",
+    "triggerProfitPrice": "",
+    "triggerStopPrice": "",
+    "expireTime": "",
+    "positionSide": "",
+}
+signedFutureHttpAPI.create_entrust_profit(params)
+```
+
+### test_cancel_entrust_profit_stop
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "profitId": "xxxxx",
+}
+signedFutureHttpAPI.cancel_entrust_profit_stop(params)
+```
+
+### test_cancel_entrust_profit_stop_all
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "xxxxx",
+}
+signedFutureHttpAPI.cancel_entrust_profit_stop_all(params)
+```
+
+### test_get_entrust_profit_stop_all
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "symbol": "xxxxx",
+}
+signedFutureHttpAPI.get_entrust_profit_stop_all(params)
+```
+
+### test_get_entrust_profit_detail
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "profitId": "xxxxx",
+}
+signedFutureHttpAPI.get_entrust_profit_detail(params)
+```
+
+### test_update_entrust_profit_stop
+
+```
+signedHttpAPI = SignedFutureHttpAPI(accesskey, sercetkey, domain)
+params = {
+    "profitId": "xxxxx",
+}
+signedFutureHttpAPI.update_entrust_profit_stop(params)
+```
+
+---
+
+## Rest
+
+### test_get_server_time
+
+```
+publicAPI = PublicHttpAPI()
+publicAPI.get_server_time()
+```
+
+### test_get_market_config
+
+```
+publicAPI = PublicHttpAPI()
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_market_config(params)
+```
+
+### test_get_depth
+
+```
+publicAPI = PublicHttpAPI()
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_depth(params)
+```
+
+### test_get_kline
+
+```
+publicAPI = PublicHttpAPI()
+params = {
+    "symbol": "btc_usdt",
+    "interval": "1m",
+}
+publicAPI.get_kline(params)
+```
+
+### test_get_trades
+
+```
+publicAPI = PublicHttpAPI()
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_trades(params)
+```
+
+### test_get_ticker
+
+```
+publicAPI = PublicHttpAPI()
+
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_ticker(params)
+```
+
+### test_get_full_ticker
+
+```
+publicAPI = PublicHttpAPI()
+
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_ticker(params)
+```
+
+### test_get_best_ticker
+
+```
+publicAPI = PublicHttpAPI()
+
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_best_ticker(params)
+```
+
+### test_get_24h_ticker
+
+```
+publicAPI = PublicHttpAPI()
+params = {
+    "symbol": "btc_usdt",
+}
+publicAPI.get_24h_ticker(params)
+```
+
+### test_get_coins_info
+
+```
+publicAPI = PublicHttpAPI()
+publicAPI.get_coins_info()
+```
+
+### test_get_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+orderId = 140541112005403904
+signedHttpAPI.get_order(orderId)
+```
+
+### test_get_order_list
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+signedHttpAPI.get_order_list()
+```
+
+### test_send_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+data = {
+    "symbol": "btc_usdt",
+    "side": "BUY",
+    "type": "LIMIT",
+    "timeInForce": "GTC",
+    "bizType": "SPOT",
+    "price": "20009",
+    "quantity": "0.1",
+}
+signedHttpAPI.send_order(data)
+```
+
+### test_cancel_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+orderId = 140541701988787456
+signedHttpAPI.cancel_order(orderId)
+```
+
+### test_batch_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "orderIds": "139865641251887680"
+}
+signedHttpAPI.get_batch_order(data)
+```
+
+### test_send_batch_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+order = [
+    {"symbol": "btc_usdt", "price": "19000", "quantity": "0.001",
+        "side": "BUY", "type": "LIMIT", "timeInForce": "GTC", "bizType": "SPOT"},
+    {"symbol": "btc_usdt", "price": "19001", "quantity": "0.001",
+        "side": "BUY", "type": "LIMIT", "timeInForce": "GTC", "bizType": "SPOT"},
+]
+
+data = {
+    "items": order
+}
+signedHttpAPI.send_batch_order(data)
+```
+
+### test_batch_cancel_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "items": ["140600606177600768"]
+}
+signedHttpAPI.batch_cancel_order(data)
+```
+
+### test_get_open_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "symbol": "btc_usdt"
+}
+signedHttpAPI.get_open_order(data)
+```
+
+### test_cancel_open_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "symbol": "btc_usdt"
+}
+signedHttpAPI.cancel_open_order(data)
+```
+
+### test_get_history_order
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "symbol": "btc_usdt"
+}
+signedHttpAPI.get_history_order(data)
+```
+
+### test_get_trade
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "symbol": "btc_usdt"
+}
+signedHttpAPI.get_trade(data)
+```
+
+### test_get_balance
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "currency": "usdt"
+}
+signedHttpAPI.get_balance(data)
+```
+
+### test_get_funds
+
+```
+accesskey = "xxxxxxxxxx"
+sercetkey = "yyyyyyyyyy"
+signedHttpAPI = SignedHttpAPI(accesskey, sercetkey)
+
+data = {
+    "currencies": "usdt"
+}
+signedHttpAPI.get_funds(data)
+```
+
+## WS
+
+### test_ping
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+
+publicWs = PublicWebSocket(callback=callback)
+publicWs.start()
+publicWs.ping()
+```
+
+### test_on_trade
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["trade@btc_usdt"],
+    "id": 1,
+}
+publicWs = PublicWebSocket(callback=callback)
+publicWs.start()
+publicWs.subscribe(topic)
+publicWs.ping()
+```
+
+### test_on_kline
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["kline@btc_usdt,5m"],
+    "id": 1,
+}
+publicWs = PublicWebSocket(callback=callback)
+publicWs.start()
+publicWs.subscribe(topic)
+publicWs.ping()
+```
+
+### test_on_depth
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["depth@btc_usdt,20"],
+    "id": 1,
+}
+publicWs = PublicWebSocket(callback=callback)
+publicWs.start()
+publicWs.subscribe(topic)
+publicWs.ping()
+```
+
+### test_on_depth_update
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["depth_update@btc_usdt"],
+    "id": 1,
+}
+publicWs = PublicWebSocket(callback=callback)
+publicWs.start()
+publicWs.subscribe(topic)
+publicWs.ping()
+```
+
+### test_on_ticker
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["ticker@btc_usdt"],
+    "id": 1,
+}
+publicWs = PublicWebSocket(callback=callback)
+publicWs.start()
+publicWs.subscribe(topic)
+publicWs.ping()
+```
+
+### test_on_tickers
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["tickers"],
+    "id": 1,
+}
+publicWs = PublicWebSocket(callback=callback)
+publicWs.start()
+publicWs.subscribe(topic)
+publicWs.ping()
+```
+
+### test_on_user_balance
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["balance"],
+    "id": 1,
+}
+
+accesskey = "xxxxxxxxxx"
+secretkey = "yyyyyyyyyy"
+privateWs = PrivateWebsocket(
+    accesskey=accesskey,
+    secretkey=secretkey,
+    callback=callback
+)
+privateWs.start()
+privateWs.subscribe(topic)
+privateWs.ping()
+```
+
+### test_on_user_trigger
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["trigger"],
+    "id": 1,
+}
+
+accesskey = "xxxxxxxxxx"
+secretkey = "yyyyyyyyyy"
+privateWs = PrivateWebsocket(
+    accesskey=accesskey,
+    secretkey=secretkey,
+    callback=callback
+)
+privateWs.start()
+privateWs.subscribe(topic)
+privateWs.ping()
+```
+
+### test_on_user_order
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["order"],
+    "id": 1,
+}
+
+accesskey = "xxxxxxxxxx"
+secretkey = "yyyyyyyyyy"
+privateWs = PrivateWebsocket(
+    accesskey=accesskey,
+    secretkey=secretkey,
+    callback=callback
+)
+privateWs.start()
+privateWs.subscribe(topic)
+privateWs.ping()
+```
+
+### test_on_user_trade
+
+```
+def callback(ws, message):
+    print("[ws-callback]::: ", message)
+
+topic = {
+    "params": ["trade"],
+    "id": 1,
+}
+
+accesskey = "xxxxxxxxxx"
+secretkey = "yyyyyyyyyy"
+privateWs = PrivateWebsocket(
+    accesskey=accesskey,
+    secretkey=secretkey,
+    callback=callback
+)
+privateWs.start()
+privateWs.subscribe(topic)
+privateWs.ping()
+```
+
+## realease
+
+### v0.0.1
+
+- RestAPI demo
+
+### v0.0.2
+
+- WSAPI demo
+
+### v0.0.3
+
+- RestFutureAPI demo
